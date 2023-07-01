@@ -12,6 +12,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 gem 'state_machines'
 gem 'state_machines-activerecord'
+gem 'net-http'
+gem 'uri', '0.12.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do

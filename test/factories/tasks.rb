@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :task do
     name
-    description { "Description" }
+    description
     author_id { 1 }
     assignee_id { 1 }
-    state { "new_task" }
+    state
     expired_at
   end
 end

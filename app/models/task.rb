@@ -1,15 +1,15 @@
 class Task < ApplicationRecord
 
   state_machine :state, initial: :new_task do
-    event :develop do
+    event :to_development do
       transition %i[new_task in_qa ready_for_release] => :in_development
     end
 
-    event :testing do
+    event :to_test do
       transition in_development: :in_qa
     end
 
-    event :review_the_code do
+    event :to_code_review do
       transition in_qa: :in_code_review
     end
 

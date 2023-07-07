@@ -5,7 +5,7 @@ class Task < ApplicationRecord
       transition %i[new_task in_qa ready_for_release] => :in_development
     end
 
-    event :to_test do
+    event :to_qa do
       transition in_development: :in_qa
     end
 

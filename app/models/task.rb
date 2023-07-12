@@ -29,7 +29,7 @@ class Task < ApplicationRecord
     end
 
     event :archive do
-      transaction %i[new_task released] => :archived
+      transition %i[new_task released] => :archived
     end
   end
 end

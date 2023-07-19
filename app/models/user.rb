@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, length: {minimum: 2}
   validates :email, format: { with: /(\w+)(@)(\w+)(\.(\w+))+/ }
   validates :email, uniqueness:  true
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[avatar created_at email first_name id last_name password_digest type updated_at]
+  end
 end

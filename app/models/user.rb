@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :email, uniqueness:  true
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[avatar created_at email first_name id last_name password_digest type updated_at]
+    %w[avatar created_at email first_name id last_name type updated_at]
   end
 end

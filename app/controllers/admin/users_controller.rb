@@ -4,7 +4,9 @@ class Admin::UsersController < Admin::ApplicationController
     @users = @q.result.order(:type).order(:id).page(params[:page]).per(params[:per_page])
   end
 
-  def show; end
+  def show
+    @user = User.find(params[:id])
+  end
 
   def new
     @user = User.new
@@ -19,9 +21,12 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @user = User.find(params[:id])
+  end
 
   def update
+    @user = User.find(params[:id])
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to admin_users_url
@@ -31,6 +36,7 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to admin_users_path
   end

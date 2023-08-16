@@ -1,4 +1,6 @@
 class Web::DevelopersController < Web::ApplicationController
+  skip_before_action :authenticate_user!
+
   def new
     @developer = Developer.new
   end
